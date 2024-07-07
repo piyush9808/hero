@@ -1,9 +1,18 @@
-/** @type {import('tailwindcss').Config} */
+// tailwind.config.js
 module.exports = {
-  content: ["./src/**/*.{html,jsx}"],
+  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+  darkMode: false, // or 'media' or 'class'
   theme: {
-    
+    extend: {},
   },
-  plugins: [],
-}
+  variants: {
+    extend: {
+      scrollbar: ['rounded'],
+    },
+  },
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('tailwind-scrollbar'),
+  ],
+};
 
